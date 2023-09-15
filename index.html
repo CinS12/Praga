@@ -9,8 +9,9 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
         /* Estil comú per a tots els dispositius */
-        body { margin: 0; padding: 0; }
-
+        body { margin: 0; padding: 0; 
+            background-color: #c1c582;}
+        
         /* Contenidor principal */
         .container {
             max-width: 800px; /* Amplada màxima del container */
@@ -61,6 +62,12 @@
         .sub-sub-section {
             margin-left: 20px; /* Sangría para los subsubapartados */
         }
+        footer {
+            background-color: #333; /* Color de fondo del footer */
+            color: #fff; /* Color del texto en el footer */
+            padding: 10px; /* Espaciado interior del footer */
+            text-align: center; /* Alineación del texto en el centro */
+}
     </style>
 </head>
 <body>
@@ -251,5 +258,8 @@
             marker.bindPopup('<h3>' + place.name + '</h3><img src="' + place.image + '" width="200px">');
         });
     </script>
+    <footer>
+        <p>Drets d'autor © 2023 Artur Martí Gelonch</p>
+    </footer>
 </body>
 </html>
