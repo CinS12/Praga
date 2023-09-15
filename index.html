@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descobreix Praga - Llocs Preferits</title>
+    <title>Descobreix Praga</title>
     <!-- Inclou la llibreria de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -56,6 +56,9 @@
             max-width: 100%; /* Imágenes con ancho máximo */
             height: auto; /* Altura automática para mantener la proporción */
         }
+        .sub-sub-section {
+            margin-left: 20px; /* Sangría para los subsubapartados */
+        }
     </style>
 </head>
 <body>
@@ -65,7 +68,7 @@
         <img src="resources/logo.png" alt="Logotip de Praga" class="logo">
     
         <!-- Títol de la pàgina -->
-        <h1>Praga per pijes</h1>
+        <h1>Recomanacions de Praga per pijes</h1>
 
         <!-- Div on es mostrarà el mapa -->
         <div id="map"></div>
@@ -73,27 +76,41 @@
         <!-- Apartat de text amb subapartats i imatges -->
         <div class="text-section">
             <div class="sub-section">
-                <h2>Subapartat 1</h2>
-                <p>Descripció del subapartat 1.</p>
-                <img src="imagen1.jpg" alt="Imagen 1">
+                <h2>Imprescindibles</h2>
+                <div class="sub-sub-section">
+                    <h3>Pont Carles + Old town square + rellotge astronòmic + Cafè a Kavárna + plaça del davant (torre de la pólvora, etc.)</h3>
+                    <p>Passeig pels llocs més icònics de la ciutat. A cada hora en punt el rellotge fa un "show".</p>
+                    <img src="resources/map_1.jpg" alt="Imagen 1">
+                </div>
+                <div class="sub-sub-section">
+                    <h3>Malastrana  + Castell de Praga + catedral + Carril d’or</h3>
+                    <p>Agradable passeig del pont al castell pel barri de Malastrana. Veure el castell, la catedral i les casetes del Carril d’Or.</p>
+                    <img src="resources/map_2.jpg" alt="Imagen 1">
+                </div>
+                <div class="sub-sub-section">
+                    <h3>Menjar un trolo (com a mínim)</h3>
+                    <p>La millor experiència gastronòmica que faràs en tot el viatge. És bo a tot arreu, però recomanable fer-lo perduda pels carrers del centre, a prop de la Old Town Square o aprofitant les vistes del turó de Malastrana.</p>
+                    <img src="resources/map_2.jpg" alt="Imagen 1">
+                </div>
+                
+                <!-- Subsubapartat -->
+                
             </div>
 
             <div class="sub-section">
                 <h2>Subapartat 2</h2>
                 <p>Descripció del subapartat 2.</p>
                 <img src="imagen2.jpg" alt="Imagen 2">
-            </div>
-
-            <div class="sub-section">
-                <h2>Subapartat 3</h2>
-                <p>Descripció del subapartat 3.</p>
-                <img src="imagen3.jpg" alt="Imagen 3">
-            </div>
-
-            <div class="sub-section">
-                <h2>Subapartat 4</h2>
-                <p>Descripció del subapartat 4.</p>
-                <img src="imagen4.jpg" alt="Imagen 4">
+                <!-- Subsubapartat -->
+                <div class="sub-sub-section">
+                    <h3>Subsubapartat 2.1</h3>
+                    <p>Descripció del subsubapartat 2.1.</p>
+                </div>
+                <!-- Subsubapartat -->
+                <div class="sub-sub-section">
+                    <h3>Subsubapartat 2.2</h3>
+                    <p>Descripció del subsubapartat 2.2.</p>
+                </div>
             </div>
         </div>
     </div>
