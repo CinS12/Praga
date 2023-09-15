@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descobreix Praga - Llocs Preferits</title>
+    <!-- Inclou la llibreria de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        /* Estil comú per a tots els dispositius */
+        body { margin: 0; padding: 0; }
+
+        /* Contenidor principal */
+        .container {
+            max-width: 800px; /* Amplada màxima del container */
+            margin: 0 auto; /* Centrar el container a la pàgina */
+            padding: 20px; /* Espaiat interior del container */
+            text-align: center; /* Centra el text */
+        }
+
+        /* Estil del logotip */
+        .logo {
+            width: 40px; /* Tamaño del logotip */
+            display: inline-block;
+            vertical-align: middle; /* Alinea verticalmente el logotipo con el título */
+            margin-right: 10px; /* Espai entre el logotip y el títol */
+        }
+
+        /* Estil del títol */
+        h1 {
+            font-size: 24px; /* Tamaño de fuente para el título */
+            display: inline-block;
+            vertical-align: middle; /* Alinea verticalmente el título con el logotipo */
+        }
+
+        /* Estil del mapa */
+        #map {
+            height: 500px;
+            width: 100%; /* Ancho completo del mapa */
+            margin-top: 20px; /* Espaciado entre el título y el mapa */
+        }
+    </style>
+</head>
+<body>
+    <!-- Container per tot el contingut de la pàgina -->
+    <div class="container">
+        <!-- Logotip -->
+        <img src="resources/logo.png" alt="Logotip de Praga" class="logo">
+    
+        <!-- Títol de la pàgina -->
+        <h1>Descobreix Praga - Llocs Preferits</h1>
+
+        <!-- Div on es mostrarà el mapa -->
+        <div id="map"></div>
+    </div>
+
+    <script>
+        // Configuració del mapa
+        var map = L.map('map').setView([50.0755, 14.4378], 13); // Coordenades centrals de Praga i nivell de zoom inicial
+
+        // Afegir una capa de mapa d'OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Afegir marcadors amb fotos dels llocs preferits
+        var places = [
+            {
+                coordinates: [50.09095979456315, 14.400682067292907], // Coordenades del primer lloc
+                name: 'Castell de Praga',
+                image: 'resources/castell_1.jpg' // URL de la imatge
+            },
+            {
+                coordinates: [50.0865, 14.4135], // Coordenades del segon lloc
+                name: 'Pont Carles',
+                image: 'resources/pont_1.jpg' // URL de la imatge
+            },
+            // Afegeix aquí els altres llocs preferits
+        ];
+
+        places.forEach(function(place) {
+            var marker = L.marker(place.coordinates).addTo(map);
+
+            marker.bindPopup('<h3>' + place.name + '</h3><img src="' + place.image + '" width="200px">');
+        });
+    </script>
+</body>
+</html>
